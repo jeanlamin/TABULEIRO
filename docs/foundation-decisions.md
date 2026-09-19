@@ -1,10 +1,12 @@
 # Foundation decisions (carried over from the briefs, not yet schema)
 
 This file exists so the decisions already made in
-`COMPLEXITY_V1_70_IMPLEMENTATION_BRIEF.md` and
-`COMPLEXITY_V1_70_CANONICAL_UI_BASELINE_BRIEF.md` are preserved without
-being turned into a fabricated migration. No SQL in `db/migrations/` yet
-implements any of this — see `db/migrations/README.md`.
+`docs/canonical/COMPLEXITY_V1_70_IMPLEMENTATION_BRIEF.md` and
+`docs/canonical/COMPLEXITY_V1_70_CANONICAL_UI_BASELINE_BRIEF.md` are
+preserved without being turned into a fabricated migration. Those two files
+are the canonical source — this document is only a derived summary, not a
+replacement. No SQL in `db/migrations/` yet implements any of this — see
+`db/migrations/README.md`.
 
 ## Frozen (not open for reinterpretation without a new audit round)
 

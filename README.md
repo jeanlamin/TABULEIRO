@@ -2,7 +2,7 @@
 
 Ideas become understanding.
 
-This is the technical foundation slice (V1.71-A): a Next.js scaffold, the
+This is the technical foundation slice (V1.71): a Next.js scaffold, the
 architectural boundaries, and a handful of shared primitives. It does not
 yet implement Source/Evidence, Commands, auth, or any Foundation schema —
 see `docs/foundation-decisions.md` for what is deliberately deferred.

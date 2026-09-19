@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Enforces the architecture boundaries from the V1.71-A brief:
+// Enforces the architecture boundaries from the V1.71 brief:
 //   - domain/ and application/ must not depend on Next.js or React.
 //   - components/ must never talk to the database directly.
 import { readdirSync, readFileSync, statSync } from "node:fs";
