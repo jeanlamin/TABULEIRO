@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Complexity — Continuity Experiment 01</title>
+<style>
+:root{color-scheme:dark;--bg:#090a0c;--panel:#101216;--panel2:#16191e;--line:#2b2f36;--muted:#818793;--text:#f4f4ef;--acid:#d8ff45;--bad:#ff6978;--ok:#9bff91}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1080px;margin:auto;padding:48px 24px 80px}.k{color:#717782;font-size:11px;letter-spacing:.14em;margin-bottom:10px}
+h1{margin:0;font-size:34px;font-weight:560;letter-spacing:-.02em}.intro{max-width:780px;margin:14px 0 30px;color:#9da2ac;font-size:15px;line-height:1.65}
+.stage{border:1px solid #252830;background:var(--panel);border-radius:16px;padding:24px;margin-bottom:14px}.instr{display:flex;align-items:center;gap:12px;margin-bottom:24px;font-size:15px}.badge{width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:var(--acid);color:#11130c;font-weight:800}.muted{color:var(--muted);margin-top:3px;font-size:13px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 190px minmax(0,1fr);gap:16px;align-items:center}.card{min-height:150px;border:1px solid #343842;background:var(--panel2);border-radius:13px;padding:18px}.top{display:flex;justify-content:space-between;gap:10px;margin-bottom:18px}.id{color:var(--acid);font-size:13px}.label,.small{color:#6e7480;font-size:10px;letter-spacing:.12em}.txt{color:#d3d6dc;font-size:15px;line-height:1.5}.conn{height:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}.line{height:2px;width:100%;background:var(--acid)}.cline{color:var(--acid);font-size:10px;letter-spacing:.12em}.x{color:#ff8f99;font-size:28px;line-height:1}.broken{color:#ff8f99;font-size:9px;letter-spacing:.09em;text-align:center}.read{margin-top:22px;border-top:1px solid #252830;padding-top:18px}.readtxt{margin-top:7px;color:#c5c8cf;font-size:14px}
+.prop{display:flex;justify-content:space-between;gap:20px;align-items:center;border:1px solid #487a43;background:#14171b;border-radius:12px;padding:18px}.status{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--ok)}.center{text-align:center}.btn{border:0;border-radius:10px;padding:16px 24px;background:var(--bad);color:#17090b;font-weight:850;letter-spacing:.06em;cursor:pointer;font-size:13px}.btn.restore{border:1px solid #4e5c24;background:#1d2312;color:var(--acid)}.hint{color:#737984;font-size:13px;margin:16px 0 0}.result{margin-top:24px;border-top:1px solid #292d34;padding-top:22px;text-align:left}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.item{display:flex;gap:9px;align-items:center;border:1px solid #292d34;border-radius:8px;padding:10px 12px;color:#b8bcc5;font-size:12px}.ok{color:var(--ok)}.conclusion{color:#b9bdc5;line-height:1.6}.debugbtn{display:block;margin:22px auto;border:1px solid #2b2f36;background:transparent;color:#777d88;border-radius:8px;padding:9px 12px;cursor:pointer}.debug{display:none;border:1px solid #242830;background:#0f1115;border-radius:12px;padding:18px;margin-bottom:20px}.events{color:#a8adb7;font-size:12px;line-height:1.8}.question{margin-top:28px;border:1px solid #3a4320;background:#14170e;border-radius:14px;padding:22px}.qtext{margin-top:8px;font-size:16px}.ans{margin-top:12px;color:#aeb59b;line-height:1.6}
+@media(max-width:760px){.row{grid-template-columns:1fr}.conn{height:90px}.grid{grid-template-columns:1fr}.prop{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<main>
+<div class="k">COMPLEXITY · EXPERIMENTO 01</div>
+<h1>Uma ideia continua sendo a mesma?</h1>
+<p class="intro">Só queremos testar uma coisa: se duas versões podem parecer a mesma ideia apenas porque existe uma relação de continuidade entre elas — sem guardar um objeto semântico secreto por baixo.</p>
+
+<section class="stage">
+<div class="instr"><span class="badge">1</span><div><strong>Olhe para as duas versões.</strong><div class="muted">Agora o sistema trata O2 como continuação de O1.</div></div></div>
+<div class="row">
+<article class="card"><div class="top"><strong class="id">O1</strong><span class="label">VERSÃO ANTERIOR</span></div><div class="txt">IA democratiza capacidades criativas.</div></article>
+<div class="conn" id="connection"><div class="line"></div><div class="cline">CONTINUA</div></div>
+<article class="card"><div class="top"><strong class="id">O2</strong><span class="label">VERSÃO POSTERIOR</span></div><div class="txt">IA democratiza algumas capacidades criativas, mas pode aumentar dependência cognitiva.</div></article>
+</div>
+<div class="read"><div class="small">COMO O SISTEMA LÊ ISSO AGORA</div><div class="readtxt" id="reading">Uma linha: O1 → O2. Para a interface, parece uma mesma hipótese evoluindo.</div></div>
+</section>
+
+<section class="stage">
+<div class="instr"><span class="badge">2</span><div><strong>Existe uma interpretação que depende dessa ligação.</strong><div class="muted">Ela diz: “a mesma hipótese ficou mais específica”.</div></div></div>
+<div class="prop" id="prop"><div><div class="small">P1 · INTERPRETAÇÃO</div><div class="txt" style="margin-top:7px">A mesma hipótese ficou mais específica na revisão.</div></div><div class="status" id="status">SUSTENTADA</div></div>
+</section>
+
+<section class="stage center">
+<div class="instr" style="justify-content:center"><span class="badge">3</span><div style="text-align:left"><strong>Agora faça o experimento.</strong><div class="muted">Retire apenas a continuidade. Não apague O1, O2 nem P1.</div></div></div>
+<button class="btn" id="breakBtn">QUEBRAR CONTINUIDADE</button>
+<p class="hint" id="hint">Clique e observe somente duas mudanças: a linha entre O1 e O2 some, e P1 perde suporte.</p>
+<div class="result" id="result" style="display:none">
+<h3>O que aconteceu?</h3>
+<div class="grid">
+<div class="item"><span class="ok">✓</span>O1 continua existindo</div>
+<div class="item"><span class="ok">✓</span>O2 continua existindo</div>
+<div class="item"><span class="ok">✓</span>o passado continua registrado</div>
+<div class="item"><span class="ok">✓</span>P1 continua existindo</div>
+<div class="item"><span class="ok">✓</span>P1 perdeu o suporte</div>
+<div class="item"><span class="ok">✓</span>nenhum semanticObjectId foi necessário</div>
+</div>
+<p class="conclusion">A única coisa retirada foi a relação <strong>O1 → O2</strong>. A “mesma hipótese” desapareceu da projeção porque ela era derivada da continuidade, não uma entidade fundamental armazenada.</p>
+</div>
+</section>
+
+<button class="debugbtn" id="debugBtn">Ver o que existe por baixo</button>
+<section class="debug" id="debug">
+<div class="small">HISTÓRICO IMUTÁVEL</div>
+<div class="events" id="events"></div>
+</section>
+
+<div class="question">
+<div class="small">PERGUNTA QUE O EXPERIMENTO RESPONDE</div>
+<div class="qtext">Precisamos realmente armazenar uma entidade “Semantic Object” para O1 e O2 serem tratados como a mesma ideia?</div>
+<div class="ans">Neste caso mínimo: <strong>não.</strong> A continuidade explícita é suficiente para reconstruir essa aparência.</div>
+</div>
+</main>
+
+<script>
+let broken=false, debug=false;
+const base=["O1 criado","O2 criado","continuidade O1 → O2 afirmada","P1 criada dependendo dessa continuidade"];
+function render(){
+ const conn=document.getElementById("connection"), reading=document.getElementById("reading"), prop=document.getElementById("prop"), status=document.getElementById("status"), btn=document.getElementById("breakBtn"), result=document.getElementById("result"), hint=document.getElementById("hint"), events=document.getElementById("events");
+ if(!broken){
+   conn.innerHTML='<div class="line"></div><div class="cline">CONTINUA</div>';
+   reading.textContent="Uma linha: O1 → O2. Para a interface, parece uma mesma hipótese evoluindo.";
+   prop.style.borderColor="#487a43";status.textContent="SUSTENTADA";status.style.color="#9bff91";
+   btn.textContent="QUEBRAR CONTINUIDADE";btn.classList.remove("restore");result.style.display="none";hint.style.display="block";
+ }else{
+   conn.innerHTML='<div class="x">×</div><div class="broken">NÃO HÁ CONTINUIDADE ATIVA</div>';
+   reading.textContent="Duas linhas separadas: O1 e O2 continuam existindo, mas deixaram de formar uma única continuidade.";
+   prop.style.borderColor="#82484f";status.textContent="SEM SUPORTE";status.style.color="#ff9ba4";
+   btn.textContent="RESTAURAR CONTINUIDADE";btn.classList.add("restore");result.style.display="block";hint.style.display="none";
+ }
+ events.innerHTML=[...base,...(broken?["continuidade O1 → O2 retirada"]:[])].map((x,i)=>`${i+1}. ${x}`).join("<br>");
+}
+document.getElementById("breakBtn").onclick=()=>{broken=!broken;render()};
+document.getElementById("debugBtn").onclick=()=>{debug=!debug;document.getElementById("debug").style.display=debug?"block":"none";document.getElementById("debugBtn").textContent=debug?"Esconder o que existe por baixo":"Ver o que existe por baixo"};
+render();
+</script>
+</body>
+</html>
